@@ -42,7 +42,7 @@
 			&nbsp;
 		</dd>
 	</dl>
-	<h3><?php echo __('Related Attacks'); ?></h3>
+	<h3><?php echo __('Attacks'); ?></h3>
 	<?php if (!empty($currentWar['Attack'])): ?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>

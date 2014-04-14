@@ -9,9 +9,29 @@ App::uses('AppModel', 'Model');
  */
 class War extends AppModel {
 
-/*public $virtualFields = array(
-    'name' => 'CONCAT(homeClan.name, " vs ", AwayClan.name)'
+//function to do calculate the stage
+
+//do virtual fields HAVE to be mysql statments?  do I have the wrong terminology?
+	
+/*function getStage($prepTime, $warTime, $endTime){
+	$nowTime = new DateTime('now');        
+	if( $endTime < $nowTime) {
+		return "Ended";
+	};
+	elseif( $warTime < $nowTime) {
+		return "War";
+	};
+	elseif( $preptime < $nowtime) {
+		return "Preperation";
+	};
+    else { return "error";}
+}*/
+
+// adding virtual fields to help with the view
+/*var $virtualFields = array(
+	'stage' => 
 );*/
+
 /**
  * Validation rules
  *
