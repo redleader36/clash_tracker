@@ -9,6 +9,9 @@ App::uses('AppModel', 'Model');
  */
 class War extends AppModel {
 
+/*public $virtualFields = array(
+    'name' => 'CONCAT(homeClan.name, " vs ", AwayClan.name)'
+);*/
 /**
  * Validation rules
  *
