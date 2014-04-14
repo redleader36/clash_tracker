@@ -66,12 +66,18 @@
 	</table>
 <?php endif; ?>
 
+To Do:
+
+add War Score/Percentages
+add Top Atackers/Starrers
+add Top Defenders
 	<div class="actions">
 		<ul>
 			<li><?php echo $this->Html->link(__('New Attack'), array('controller' => 'attacks', 'action' => 'add')); ?> </li>
 		</ul>
 	</div>
 </div>
+
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
