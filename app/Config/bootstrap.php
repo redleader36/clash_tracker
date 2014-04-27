@@ -105,3 +105,8 @@ CakeLog::config('error', array(
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+//loading the Composer Plugin for CakePHP
+CakePlugin::load('Composer', array('bootstrap' => true));
+
+CakePlugin::load('DebugKit'); //Loads a single plugin named DebugKit

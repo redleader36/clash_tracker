@@ -61,6 +61,6 @@
 			?>
 		</div>
 	</div>
-	<?php echo $this->element('sql_dump'); ?>
+	<?php //uncomment to get sql dump back  echo $this->element('sql_dump'); ?>
 </body>
 </html>

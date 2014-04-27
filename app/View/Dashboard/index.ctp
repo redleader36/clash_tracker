@@ -1,7 +1,7 @@
 <div class="wars view">
 <h2><?php echo $this->Html->link($currentWar['HomeClan']['name'], array('controller' => 'clans', 'action' => 'view', $currentWar['HomeClan']['id'])); ?> vs <?php echo $this->Html->link($currentWar['AwayClan']['name'], array('controller' => 'clans', 'action' => 'view', $currentWar['AwayClan']['id'])); ?></h2>
 	<dl>
-		<dt><?php echo __('Current Stage'); ?></dt>
+		<dt><?php echo __('Start Time'); ?></dt>
 		<dd>
 			<?php echo h($currentWar['War']['startTime']); ?>
 			&nbsp;
@@ -53,8 +53,8 @@
 	</tr>
 	<?php foreach ($currentWar['Attack'] as $attack): ?>
 		<tr>
-			<td><?php echo $attack['attacker_id']; ?></td>
-			<td><?php echo $attack['defender_id']; ?></td>
+			<td><?php echo $attack['Attacker']['name']; ?></td>
+			<td><?php echo $attack['Defender']['name']; ?></td>
 			<td><?php echo $attack['stars']; ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'attacks', 'action' => 'view', $attack['id'])); ?>
@@ -66,11 +66,14 @@
 	</table>
 <?php endif; ?>
 
-To Do:
+To Do:<br><br>
 
-add War Score/Percentages
-add Top Atackers/Starrers
-add Top Defenders
+add War Score/Percentages<br>
+add Top Atackers/Starrers<br>
+add Top Defenders<br>
+use Attacker and Defender Names<br>
+use star icons?<br>
+<br>
 	<div class="actions">
 		<ul>
 			<li><?php echo $this->Html->link(__('New Attack'), array('controller' => 'attacks', 'action' => 'add')); ?> </li>
