@@ -7,6 +7,7 @@
 		echo $this->Form->input('stars');
 		echo $this->Form->input('attacker_id');
 		echo $this->Form->input('defender_id');
+		echo $this->params['pass'][0];
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>

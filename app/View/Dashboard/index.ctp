@@ -76,7 +76,8 @@ use star icons?<br>
 <br>
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Attack'), array('controller' => 'attacks', 'action' => 'add')); ?> </li>
+			<li><?php //this successfully adds the current war id to the url to populate the war ide in add attack view
+			echo $this->Html->link(__('New Attack'), array('controller' => 'attacks', 'action' => 'add', $currentWar['War']['id'] )); ?> </li>
 		</ul>
 	</div>
 </div>
@@ -84,13 +85,8 @@ use star icons?<br>
 <div class="actions">
 	<h3><?php echo __('Actions'); ?></h3>
 	<ul>
-		<li><?php echo $this->Html->link(__('Edit War'), array('action' => 'edit', $currentWar['War']['id'])); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete War'), array('action' => 'delete', $currentWar['War']['id']), null, __('Are you sure you want to delete # %s?', $currentWar['War']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Wars'), array('action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New War'), array('action' => 'add')); ?> </li>
+		<li><?php echo $this->Html->link(__('List Wars'), array('controller' => 'wars', 'action' => 'index')); ?> </li>
+		<li><?php echo $this->Html->link(__('New War'), array('controller' => 'wars', 'action' => 'add')); ?> </li>
 		<li><?php echo $this->Html->link(__('List Clans'), array('controller' => 'clans', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Away Clan'), array('controller' => 'clans', 'action' => 'add')); ?> </li>
-		<li><?php echo $this->Html->link(__('List Attacks'), array('controller' => 'attacks', 'action' => 'index')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Attack'), array('controller' => 'attacks', 'action' => 'add')); ?> </li>
 	</ul>
 </div>

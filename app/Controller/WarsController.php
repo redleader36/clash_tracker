@@ -48,7 +48,9 @@ class WarsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			//
 			$this->War->create();
+			//$this->request->data is the array from the post
 			if ($this->War->save($this->request->data)) {
 				$this->Session->setFlash(__('The war has been saved.'));
 				return $this->redirect(array('action' => 'index'));
