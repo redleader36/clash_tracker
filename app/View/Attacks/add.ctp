@@ -3,11 +3,13 @@
 	<fieldset>
 		<legend><?php echo __('Add Attack'); ?></legend>
 	<?php
-		echo $this->Form->input('war_id');
+		echo $this->Form->hidden('war_id');
 		echo $this->Form->input('stars');
 		echo $this->Form->input('attacker_id');
 		echo $this->Form->input('defender_id');
-		echo $this->params['pass'][0];
+		
+		//this gets me the parameter passed from the dashboard, but what if this page is linked from elsewhere?
+		echo $this->passedArgs[0];
 	?>
 	</fieldset>
 <?php echo $this->Form->end(__('Submit')); ?>
