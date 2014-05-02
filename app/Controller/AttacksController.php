@@ -46,13 +46,12 @@ class AttacksController extends AppController {
  *
  * @return void
  */
-	public function add($warId = null) {
+	public function add($war_id = null) {
 		if ($this->request->is('post')) {
 			$this->Attack->create();
-			if (empty($this->data))  { 
 		        if (!empty($war_id)) { 
-        		    $this->data['Wars']['war_id'] = $warId; 
-        			} }
+        		    $this->request->data['Attack']['war_id'] = $war_id; 
+        			}
 			if ($this->Attack->save($this->request->data)) {
 				$this->Session->setFlash(__('The attack has been saved.'));
 				return $this->redirect(array('action' => 'index'));
