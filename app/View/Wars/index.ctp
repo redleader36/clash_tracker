@@ -4,7 +4,6 @@
 	<tr>
 			<th><?php echo $this->Paginator->sort('id'); ?></th>
 			<th><?php echo $this->Paginator->sort('startTime'); ?></th>
-			<th><?php echo $this->Paginator->sort('prepareTime'); ?></th>
 			<th><?php echo $this->Paginator->sort('warTime'); ?></th>
 			<th><?php echo $this->Paginator->sort('endTime'); ?></th>
 			<th><?php echo $this->Paginator->sort('awayClan_id'); ?></th>
@@ -17,7 +16,6 @@
 	<tr>
 		<td><?php echo h($war['War']['id']); ?>&nbsp;</td>
 		<td><?php echo h($war['War']['startTime']); ?>&nbsp;</td>
-		<td><?php echo h($war['War']['prepareTime']); ?>&nbsp;</td>
 		<td><?php echo h($war['War']['warTime']); ?>&nbsp;</td>
 		<td><?php echo h($war['War']['endTime']); ?>&nbsp;</td>
 		<td>

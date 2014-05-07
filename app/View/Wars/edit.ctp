@@ -5,7 +5,6 @@
 	<?php
 		echo $this->Form->input('id');
 		echo $this->Form->input('startTime');
-		echo $this->Form->input('prepareTime');
 		echo $this->Form->input('warTime');
 		echo $this->Form->input('endTime');
 		echo $this->Form->input('awayClan_id');

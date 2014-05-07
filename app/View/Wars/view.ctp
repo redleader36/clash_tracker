@@ -11,11 +11,6 @@
 			<?php echo h($war['War']['startTime']); ?>
 			&nbsp;
 		</dd>
-		<dt><?php echo __('PrepareTime'); ?></dt>
-		<dd>
-			<?php echo h($war['War']['prepareTime']); ?>
-			&nbsp;
-		</dd>
 		<dt><?php echo __('WarTime'); ?></dt>
 		<dd>
 			<?php echo h($war['War']['warTime']); ?>

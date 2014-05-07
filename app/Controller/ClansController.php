@@ -39,6 +39,7 @@ class ClansController extends AppController {
 		}
 		$options = array('conditions' => array('Clan.' . $this->Clan->primaryKey => $id));
 		$this->set('clan', $this->Clan->find('first', $options));
+		$this->set('players', $this->Paginator->paginate());
 	}
 
 /**

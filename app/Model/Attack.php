@@ -9,6 +9,13 @@ App::uses('AppModel', 'Model');
  */
 class Attack extends AppModel {
 
+	//adding a virtual field to figure star level
+public function __construct($id=false, $table=null, $ds=null){
+       parent::__construct($id, $table, $ds);
+       $this->virtualFields = array(
+         'stars'=>sprintf("floor(%s.percent/50) + %s.base_destroyed",$this->alias, $this->alias),
+       );
+   }
 /**
  * Validation rules
  *

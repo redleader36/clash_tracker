@@ -9,6 +9,14 @@ App::uses('AppModel', 'Model');
  */
 class War extends AppModel {
 
+	//adding a virtual field to figure star level
+public function __construct($id=false, $table=null, $ds=null){
+       parent::__construct($id, $table, $ds);
+       $this->virtualFields = array(
+         'date'=>'DATE_FORMAT(War.startTime,"%d/%m")'
+         );
+   }
+
 //function to do calculate the stage
 
 //do virtual fields HAVE to be mysql statments?  do I have the wrong terminology?

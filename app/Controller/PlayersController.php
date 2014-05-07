@@ -46,9 +46,12 @@ class PlayersController extends AppController {
  *
  * @return void
  */
-	public function add() {
+	public function add($clan_id) {
 		if ($this->request->is('post')) {
 			$this->Player->create();
+		        if (!empty($clan_id)) { 
+        		    $this->request->data['Player']['clan_id'] = $clan_id; 
+        			}
 			if ($this->Player->save($this->request->data)) {
 				$this->Session->setFlash(__('The player has been saved.'));
 				return $this->redirect(array('action' => 'index'));

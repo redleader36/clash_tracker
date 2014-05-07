@@ -8,7 +8,6 @@
 		echo $this->Form->input('thLevel');
 		echo $this->Form->input('playLevel');
 		echo $this->Form->input('trophies');
-		echo $this->Form->input('clan_id');
 		echo $this->Form->input('imageUrl');
 		echo $this->Form->input('note');
 	?>

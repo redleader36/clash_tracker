@@ -1,24 +1,20 @@
 <div class="wars view">
-<h2><?php echo $this->Html->link($currentWar['HomeClan']['name'], array('controller' => 'clans', 'action' => 'view', $currentWar['HomeClan']['id'])); ?> vs <?php echo $this->Html->link($currentWar['AwayClan']['name'], array('controller' => 'clans', 'action' => 'view', $currentWar['AwayClan']['id'])); ?></h2>
+<h2><?php echo $this->Html->link($currentWar['War']['date']." War", array('controller' => 'wars', 'action' => 'view', $currentWar['War']['id'])); ?></h2>	
+<h4><?php echo $this->Html->link($currentWar['HomeClan']['name'], array('controller' => 'clans', 'action' => 'view', $currentWar['HomeClan']['id'])); ?> vs <?php echo $this->Html->link($currentWar['AwayClan']['name'], array('controller' => 'clans', 'action' => 'view', $currentWar['AwayClan']['id'])); ?></h4>
 	<dl>
 		<dt><?php echo __('Start Time'); ?></dt>
 		<dd>
-			<?php echo h($currentWar['War']['startTime']); ?>
-			&nbsp;
-		</dd>
-		<dt><?php echo __('PrepareTime'); ?></dt>
-		<dd>
-			<?php echo h($currentWar['War']['prepareTime']); ?>
+			<?php echo h($this->Time->format($currentWar['War']['startTime'],'%B %e, %Y %l:%M %p')); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('WarTime'); ?></dt>
 		<dd>
-			<?php echo h($currentWar['War']['warTime']); ?>
+			<?php echo h($this->Time->format($currentWar['War']['warTime'],'%B %e, %Y %l:%M %p')); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('EndTime'); ?></dt>
 		<dd>
-			<?php echo h($currentWar['War']['endTime']); ?>
+			<?php echo h($this->Time->format($currentWar['War']['endTime'],'%B %e, %Y %l:%M %p')); ?>
 			&nbsp;
 		</dd>
 		<dt><?php echo __('Away Clan'); ?></dt>
@@ -49,6 +45,9 @@
 		<th><?php echo __('Attacker Id'); ?></th>
 		<th><?php echo __('Defender Id'); ?></th>
 		<th><?php echo __('Stars'); ?></th>
+		<th><?php echo __('Percent'); ?></th>
+		<th><?php echo __('Base Destroyed'); ?></th>
+
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($currentWar['Attack'] as $attack): ?>
@@ -56,6 +55,8 @@
 			<td><?php echo $attack['Attacker']['name']; ?></td>
 			<td><?php echo $attack['Defender']['name']; ?></td>
 			<td><?php echo $attack['stars']; ?></td>
+			<td><?php echo $attack['percent']; ?></td>
+			<td><?php echo ($attack['base_destroyed']?'yes':'no'); ?></td>
 			<td class="actions">
 				<?php echo $this->Html->link(__('View'), array('controller' => 'attacks', 'action' => 'view', $attack['id'])); ?>
 				<?php echo $this->Html->link(__('Edit'), array('controller' => 'attacks', 'action' => 'edit', $attack['id'])); ?>

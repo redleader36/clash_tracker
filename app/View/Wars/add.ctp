@@ -4,9 +4,6 @@
 		<legend><?php echo __('Add War'); ?></legend>
 	<?php
 		echo $this->Form->input('startTime');
-		echo $this->Form->input('prepareTime');
-		echo $this->Form->input('warTime');
-		echo $this->Form->input('endTime');
 		echo $this->Form->input('awayClan_id');
 		echo $this->Form->input('homeClan_id');
 	?>

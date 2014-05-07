@@ -3,16 +3,18 @@
 	<?php if (!empty($clan['Player'])): ?>
 	<table cellpadding = "0" cellspacing = "0">
 	<tr>
-		<th><?php echo __('Name'); ?></th>
-		<th><?php echo __('Trophies'); ?></th>
-		<th><?php echo __('Level'); ?></th>
-		<th><?php echo __('Town Hall'); ?></th>
+		<th><?php echo $this->Paginator->sort('Map Order'); ?></th>
+		<th><?php echo $this->Paginator->sort('Name'); ?></th>
+		<th><?php echo $this->Paginator->sort('Trophies'); ?></th>
+		<th><?php echo $this->Paginator->sort('Level'); ?></th>
+		<th><?php echo $this->Paginator->sort('Town Hall'); ?></th>
 		<th><?php echo __('Base Layout'); ?></th>
 		<th><?php echo __('Notes'); ?></th>
 		<th class="actions"><?php echo __('Actions'); ?></th>
 	</tr>
 	<?php foreach ($clan['Player'] as $player): ?>
 		<tr>
+			<td><?php echo $player['mapOrder']; ?></td>
 			<td><?php echo $player['name']; ?></td>
 			<td><?php echo $player['trophies']; ?></td>
 			<td><?php echo $player['playLevel']; ?></td>
@@ -32,7 +34,7 @@
 
 	<div class="actions">
 		<ul>
-			<li><?php echo $this->Html->link(__('New Player'), array('controller' => 'players', 'action' => 'add')); ?> </li>Add clan id to automagically populate Clan on add player page
+			<li><?php echo $this->Html->link(__('New Player'), array('controller' => 'players', 'action' => 'add', $clan['Clan']['id'])); ?> </li>Add clan id to automagically populate Clan on add player page
 		</ul>
 	</div>
 </div>
